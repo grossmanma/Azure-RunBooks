@@ -1,4 +1,4 @@
-Add-AzureRmAccount -Credential (Get-AutomationPSCredential -Name 'AzureAdmin')
-Set-AzureRmContext 
+$null = Add-AzureRmAccount -Credential (Get-AutomationPSCredential -Name 'AzureAdmin')
+$null = Set-AzureRmContext -SubscriptionName (get-AutomationVariable -Name 'SubVar' -Value <System.Object>)
 
-(Get-AzureRmResourceGroup).ResourceGroupName
+$null = (Get-AzureRmResourceGroup).ResourceGroupName
